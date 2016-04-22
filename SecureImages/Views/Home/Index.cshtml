@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+@model SecureImages.Models.ImageEncodeViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <p>Barebones MVC</p>
+        <p>hello</p>
+        
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="text" name="UserName" />
+            <input type="text" name="SaltPerUser" placeholder="Salt Must be Guid string" />
+            <input type="file" name="FileItem" id="FileItem" />
+
+            <input type="submit" />
+        }
+
+    </div>
+</body>
+</html>
